@@ -70,21 +70,8 @@ function App() {
             const verifyBuyerResponseDetails = await paymentsState?.verifyBuyer(
               cardTokenizationResult?.token,
               {
-                billingContact: {
-                  givenName: process.env.REACT_APP_BUYER_GIVEN_NAME,
-                  familyName: process.env.REACT_APP_BUYER_FAMILY_NAME,
-                  addressLines: [
-                    process.env.REACT_APP_BUYER_ADDRESS_LINE_1!,
-                    process.env.REACT_APP_BUYER_ADDRESS_LINE_2!,
-                  ],
-                  city: process.env.REACT_APP_BUYER_CITY,
-                  state: process.env.REACT_APP_BUYER_STATE,
-                  postalCode: process.env.REACT_APP_BUYER_POSTAL_CODE,
-                  countryCode: process.env.REACT_APP_BUYER_COUNTRY_CODE,
-                  email: process.env.REACT_APP_BUYER_EMAIL,
-                  phone: process.env.REACT_APP_BUYER_PHONE,
-                },
                 intent: "STORE",
+                billingContact: {},
               }
             );
 
